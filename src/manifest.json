@@ -17,7 +17,7 @@
     {
       "js": ["scripts/switch-mode.js"],
       "css": ["styles/switch-mode.css", "styles/dark-support.css"],
-      "matches": ["<all_urls>", "*://juejin.cn/"],
+      "matches": ["<all_urls>", "*://juejin.cn/*"],
       "run_at": "document_end"
     }
   ],
