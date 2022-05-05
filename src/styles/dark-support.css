@@ -1,0 +1,195 @@
+/* 深色模式 */
+html.__dark {
+    color-scheme: dark;
+}
+
+.__dark .main-area>* {
+    background-color: #2f2f2f;
+}
+
+/* 深色模式用于覆盖掘金基础样式 */
+html,
+html header,
+html article,
+html div {
+    transition: background-color .5s;
+}
+
+html,
+html div,
+html p,
+html a {
+    transition: color .5s;
+}
+
+html.__dark {
+    background-color: #111;
+}
+
+.__dark .name,
+.__dark .block-body .app-link .headline,
+.__dark .sidebar-block .block-title,
+.__dark .sidebar-block .catalog-title,
+.__dark .sidebar-block.link-block .title,
+.__dark .next-article .next-article-title,
+.__dark .extension-banner .banner-title,
+.__dark .recommended-area .title-content,
+.__dark .stat-block .block-title,
+.__dark .follow-block .follow-item,
+.__dark .source-header .username,
+.__dark .meta-container .user-message,
+.__dark .userbox .username,
+.__dark .sidebar .list_box .title {
+    color: #1f80ff !important;
+}
+
+.__dark .next-article .list-icon {
+    fill: #1f80ff !important;
+}
+
+.right-side-nav .notification,
+.right-side-nav .menu {
+    background-color: transparent !important;
+}
+
+.__dark .main-header,
+.__dark .view-nav,
+.__dark .view-nav:before,
+.__dark .signin-tip,
+.__dark .sidebar-block,
+.__dark .sidebar-block .recommend-author-block,
+.__dark .block,
+.__dark .article-catalog,
+.__dark .next-article,
+.__dark article.article,
+.__dark .comment-list-box,
+.__dark .recommended-list-title-wrapper,
+.__dark .entry-list,
+.__dark .entry-list .entry,
+.__dark .entry-list-container,
+.__dark .list-block .list-header,
+.__dark .list-block .post-list-box,
+.__dark .badge-wall,
+.__dark .activity-empty,
+.__dark .activity-item,
+.__dark .community-list,
+.__dark .community-list-item,
+.__dark .share-popup,
+.__dark .column-container,
+.__dark .pin,
+.__dark .pin-editor-dialog,
+.__dark .dock-nav,
+.__dark .userbox,
+.__dark .sidebar .list_box,
+.__dark .guide-link,
+.__dark .nav-menu {
+    background-color: #2f2f2f !important;
+}
+
+.__dark .sub-comment-list,
+.__dark .share-popup .share-item:hover,
+.__dark .column-link:hover,
+.__dark .pin-editor-dialog .editor-body .content {
+    background-color: #222 !important;
+}
+
+.__dark .nav-menu .nav-menu-item:hover,
+.__dark article.article .column-content .item-container:hover {
+    background-color: #525252 !important;
+}
+
+/* .__dark article.article .column-content .item-container:hover {
+    background-color: initial !important;
+} */
+
+.__dark .panel-btn {
+    background-color: #444 !important;
+}
+
+.__dark .stat-item .content,
+.__dark .sidebar-block .catalog-list .item,
+.__dark .emoji-btn .emoji-box span,
+.__dark .image-btn span,
+.__dark .badge-wall,
+.__dark .more-block .more-item {
+    color: #86909c !important;
+}
+
+.__dark .panel-btn:hover .sprite-icon,
+.__dark .userbox .status .count,
+.__dark .dock-nav .item .title {
+    color: #88afff !important;
+}
+
+.__dark .nav-item a,
+.__dark .nav-item .item-title,
+.__dark .signin-tip .first-line .title,
+.__dark .sidebar-block .user-block-header,
+.__dark .sidebar-block .block-body .entry-list .entry-title,
+.__dark .sidebar-block .catalog-list .item.d1,
+.__dark .next-article .article,
+.__dark article.article .article-title,
+.__dark .comment-list-box .header-title,
+.__dark .entry-list .title-row a.title,
+.__dark .info-box a.title,
+.__dark .list-block .sub-header-title,
+.__dark .post-item .username,
+.__dark .post-item-title h3,
+.__dark .column-container .title,
+.__dark .pin-header-row .username,
+.__dark .pin .content-box,
+.__dark .pin-editor-dialog .editor-body .rich-editor,
+.__dark .nav-menu .nav-menu-item {
+    color: #ddd !important;
+}
+
+.__dark .active .item-title,
+.__dark .nav-item.active>a {
+    color: #1f80ff !important;
+}
+
+.__dark .tag-list-box .tag-list-title,
+.__dark .info-box .top .username {
+    color: #fff !important;
+}
+
+.__dark .emoji-btn .emoji-box svg,
+.__dark .image-btn svg {
+    fill: #86909c !important;
+}
+
+.__dark .list-header .header-content .search-icon-container {
+    background: transparent !important;
+}
+
+.__dark .pin-list {
+    background-color: #111 !important;
+}
+
+.__dark .share-popup::after {
+    border-right-color: #2f2f2f !important;
+}
+
+.__dark .xitu-skeleton {
+    background-color: #2f2f2f !important;
+}
+
+@media (max-width: 1149px) {
+    .__dark .main-nav-list {
+        background-color: transparent !important;
+    }
+
+    .__dark .phone-hide,
+    .__dark .community-list,
+    .__dark .community-list-item {
+        background-color: #2f2f2f !important;
+    }
+}
+
+.__dark .markdown-body.__dark.dtf h1 {
+    color: #fff;
+}
+
+.__dark .markdown-body.__dark.dtf p {
+    color: #ddd;
+}

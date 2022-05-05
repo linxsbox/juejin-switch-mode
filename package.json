@@ -1,0 +1,29 @@
+{
+  "name": "juejin-switch-mode",
+  "version": "0.0.1",
+  "description": "稀土掘金整站明亮与深色模式切换插件",
+  "author": "Lin.xs",
+  "license": "GPL 3.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node ./build/dev.js",
+    "build": "deno run --allow-read --allow-write --allow-run ./build/index.js",
+    "sa": "sass",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linxsbox/juejin-switch-mode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/linxsbox/juejin-switch-mode/issues"
+  },
+  "homepage": "https://github.com/linxsbox/juejin-switch-mode#readme",
+  "dependencies": {
+    "@rollup/plugin-json": "^4.1.0",
+    "rollup": "^2.71.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "sass": "^1.51.0"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "juejin-switch-mode",
+  "version": "0.0.1",
+  "description": "稀土掘金整站明亮与深色模式切换插件",
+  "author": "Lin.xs",
+  "icons": {
+    "16": "images/icons/16.png",
+    "48": "images/icons/48.png",
+    "128": "images/icons/128.png"
+  },
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "devtools_page": "html/devtools.html",
+  "content_scripts": [
+    {
+      "js": ["scripts/switch-mode.js"],
+      "css": ["styles/switch-mode.css", "styles/dark-support.css"],
+      "matches": ["<all_urls>", "*://juejin.cn/"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": []
+}

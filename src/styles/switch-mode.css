@@ -1,0 +1,69 @@
+.switch-mode-box {
+    position: fixed;
+    top: 64px;
+    left: 20px;
+    font-size: 0;
+    z-index: 9999;
+}
+
+.switch-mode-box .toggle-mode-btn {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    will-change: auto;
+}
+
+.switch-mode-box .toggle-mode-btn::before,
+.switch-mode-box .toggle-mode-btn::after {
+    content: '';
+    border-radius: 24px;
+}
+
+.switch-mode-box .toggle-mode-btn::before {
+    display: block;
+    height: 100%;
+    background-color: #404040;
+    border: 2px solid #7d7d7d;
+    box-sizing: border-box;
+    transition: background-color .3s;
+}
+
+.switch-mode-box .toggle-mode-btn::after {
+    position: absolute;
+    display: inline-block;
+    top: 2px;
+    width: 16px;
+    height: 16px;
+    font-size: 12px;
+    box-sizing: border-box;
+    background-color: #fff;
+    transform: translateX(2px);
+    transition: transform .5s, background-color .5s;
+}
+
+.switch-mode-box #toggle-mode:checked+.toggle-mode-btn::before {
+    background-color: #fffceb;
+}
+
+.switch-mode-box #toggle-mode:checked+.toggle-mode-btn::after {
+    background-color: #000;
+    transform: translateX(22px);
+}
+
+.switch-mode-box .toggle-icon {
+    display: inline-block;
+    margin-left: 6px;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.switch-mode-box .toggle-icon::before {
+    content: '🌞';
+}
+
+.switch-mode-box #toggle-mode:checked~.toggle-icon::before {
+    content: '🌚';
+}
