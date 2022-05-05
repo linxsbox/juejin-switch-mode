@@ -8,6 +8,9 @@ const fileTree = {
   sw: background.service_worker,
 };
 
+const plugins = [json({ preferConst: true })];
+process.env.npm_lifecycle_event === "build" && plugins.push(terser());
+
 export default {
   input: "./src/scripts/switch-mode.js",
   output: [
@@ -17,7 +20,7 @@ export default {
       name: "jsm",
     },
   ],
-  plugins: [json({ preferConst: true }), terser()],
+  plugins: plugins,
   watch: {
     include: "src/**",
   },

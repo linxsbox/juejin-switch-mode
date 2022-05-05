@@ -1,4 +1,10 @@
-import { name, version, description, author, license } from "../../package.json";
+import {
+  name,
+  version,
+  description,
+  author,
+  license,
+} from "../../package.json";
 
 const DARK_SIGN = "__dark";
 const STORE_SIGN = "switch-mode";
@@ -9,6 +15,12 @@ const STORE_SIGN = "switch-mode";
  */
 const isDark = () =>
   window.localStorage.getItem(STORE_SIGN) === "true" ? true : false;
+
+/**
+ * 获取 markdown-body 节点
+ * @returns
+ */
+const getMdBody = () => document.querySelector(".markdown-body");
 
 /**
  * 初始化切换模式的元素
@@ -46,7 +58,7 @@ const initSwithcModeStatus = async () => {
   toggleMode.addEventListener("change", () => {
     htmlEL.classList.toggle(DARK_SIGN, toggleMode.checked);
 
-    const mdBody = document.querySelector(".markdown-body");
+    const mdBody = getMdBody();
     mdBody && mdBody.classList.toggle(DARK_SIGN, toggleMode.checked);
 
     window.localStorage.setItem(STORE_SIGN, toggleMode.checked);
@@ -95,9 +107,15 @@ const initObserveMdBody = () => {
       ) {
         mutation.target.classList.toggle(DARK_SIGN, isDark());
         isSupportDark(mutation.target, isDark());
+        return;
       }
       //  else if (mutation.type === "attributes") {
       // }
+    }
+    const mdBody = getMdBody();
+    if (isDark() && mdBody && !mdBody.classList.value.includes(DARK_SIGN)) {
+      mdBody.classList.toggle(DARK_SIGN, isDark());
+      isSupportDark(mdBody, isDark());
     }
   });
   observerEl.observe(mainArea, config);
@@ -107,8 +125,18 @@ const initObserveMdBody = () => {
  * 监听 URL 变化，如果为文章详情则调用监听元素变化
  */
 const initListenerForUrl = () => {
+  /\/post\//gi.test(window.location.pathname) && initObserveMdBody();
+
   window.addEventListener("popstate", (e) => {
-    /\/post\//gi.test(window.location.pathname) && initObserveMdBody();
+    if (/\/post\//gi.test(window.location.pathname)) {
+      const isLoad = () => {
+        console.log(document.querySelector(".main-area"));
+        !document.querySelector(".main-area")
+          ? window.requestAnimationFrame(isLoad)
+          : initObserveMdBody();
+      };
+      window.requestAnimationFrame(isLoad);
+    }
   });
 };
 
